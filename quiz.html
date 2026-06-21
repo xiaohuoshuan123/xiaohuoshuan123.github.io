@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>答题选礼品 · 小火山</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    nav {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+    nav .back { font-size: 1.1rem; font-weight: bold; }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 50px);
+      border: none;
+      display: block;
+    }
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #999;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="back">← 小火山</a>
+    <a href="https://e.xiaohuoshuan.dpdns.org" target="_blank" rel="noopener">在新窗口打开</a>
+  </nav>
+  <iframe id="quiz" src="https://e.xiaohuoshuan.dpdns.org" allow="clipboard-read; clipboard-write" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="loader" id="loader">加载答题页面中…</div>
+  <script>
+    // iframe 加载完成后隐藏 loader
+    document.getElementById('quiz').addEventListener('load', function() {
+      var l = document.getElementById('loader');
+      if (l) l.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
