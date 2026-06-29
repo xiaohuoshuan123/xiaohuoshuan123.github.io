@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.scss' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌋</text></svg>">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px;">
+      <a class="site-title" href="{{ '/' | relative_url }}">🌋 小火山</a>
+      <nav class="site-nav">
+        <a class="page-link" href="{{ '/' | relative_url }}">首页</a>
+        <a class="page-link" href="{{ '/quiz.html' | relative_url }}">答题有礼</a>
+        <a class="page-link" href="https://github.com/xiaohuoshuan123" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="https://github.com/xiaohuoshuan123" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://xiaohuoshuan123.github.io" target="_blank" rel="noopener">博客</a>
+      <a href="{{ '/quiz.html' | relative_url }}">答题有礼</a>
+    </div>
+    <p>© {{ site.time | date: '%Y' }} 小火山 · 用心折腾，认真生活 ✨</p>
+  </footer>
+
+</body>
+</html>
